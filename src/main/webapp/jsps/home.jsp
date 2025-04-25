@@ -17,6 +17,8 @@
 	Class39 DevOps MasterClass started on feb 08, 2025.
         Class40 DevOps MasterClass will start on june 08, 2025.
         Please invite all your contacts and friends for this life changing course.
+landmark technology
+
 </h1>
 <hr>
 <br>
