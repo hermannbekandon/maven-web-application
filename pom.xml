@@ -96,13 +96,13 @@
       <repository>
         <id>nexus</id>
         <name>Landmark Technologies Releases Nexus Repository</name>
-        <url>http://100.27.189.237:8181/landmark/repository/teslawebap-pipe-release/</url>
+        <url>http://3.90.78.126:8181/landmark/repository/teslawebapp-release/</url>
       </repository>
       
       <snapshotRepository>
         <id>nexus</id>
         <name>Landmark Technologies Snapshot Nexus Repository </name>
-        <url>http://100.27.189.237:8181/landmark/repository/teslawebap-pipe-snapshot/</url>
+        <url>http://3.90.78.126:8181/landmark/repository/teslawebapp-snapshot/</url>
       </snapshotRepository>
       
   </distributionManagement>
