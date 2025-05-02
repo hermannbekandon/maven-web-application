@@ -96,13 +96,13 @@
       <repository>
         <id>nexus</id>
         <name>Landmark Technologies Releases Nexus Repository</name>
-        <url>http://34.229.139.137:8081/repository/abcd-pipe-releases/</url>
+        <url>http://34.229.139.137:8081/repository/release123/</url>
       </repository>
       
       <snapshotRepository>
         <id>nexus</id>
         <name>Landmark Technologies Snapshot Nexus Repository </name>
-        <url>http://34.229.139.137:8081/repository/abcd-pipe-snapshot/</url>
+        <url>http://34.229.139.137:8081/repository/snap123/</url>
       </snapshotRepository>
       
   </distributionManagement>
