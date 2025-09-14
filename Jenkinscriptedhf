@@ -1,0 +1,26 @@
+node{
+    def MAVEN_HOME = tool 'maven399'  // Maven3.6.3 is the name of the Maven installation in Jenkins
+    stage('1.CloneCode') {
+        git 'https://github.com/hermannbekandon/maven-web-application'
+    }
+    stage('2.Build&Test') {
+        sh "'${MAVEN_HOME}/bin/mvn' clean package"
+    }   
+    stage('3.CodeQuality') {
+        sh "'${MAVEN_HOME}/bin/mvn' sonar:sonar" 
+    }
+    stage('4.Deploy2UAT')  {
+        sh "'${MAVEN_HOME}/bin/mvn' deploy"
+    }   
+    stage('5.MANualApproval') {
+        timeout(time: 1, unit: 'HOURS') {
+            input message: 'Application ready for deployment please approve', ok: 'Deploy'
+        }
+    }
+    stage('6.Deploy2PROD')  {
+        deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'Tomcatcred', path: '', url: 'http://54.237.10.225:8089/')], contextPath: null, war: 'target/*war'
+    }
+    stage('7.emailNotification') { 
+        emailext body: 'application ready for deployment ', recipientProviders: [developers()], subject: 'application ready ', to: 'hermannferistan12@gmail.com'
+    }
+}
